@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: >-
+  Please cite this repository as a frozen verification package and preserve the
+  provenance statement: the map was posted by L. Alpöge, produced in interaction
+  with the AI system Fable; this repository packages independent exact checks.
+title: "The Alpöge–Fable map: frozen verification package"
+type: software
+version: 1.0.0
+date-released: 2026-07-20
+authors:
+  - family-names: "Alpöge"
+    given-names: "L."
+  - name: "Fable"
+  - family-names: "Aragon"
+    given-names: "Richard"
+keywords:
+  - Jacobian Conjecture
+  - polynomial maps
+  - algebraic geometry
+  - computer algebra
+  - exact verification

@@ -1,0 +1,39 @@
+name: Exact verification
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install exact dependency
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+
+      - name: Verify original frozen files
+        run: make frozen-files-integrity
+
+      - name: Verify original frozen archive
+        run: make frozen-archive-integrity
+
+      - name: Run all exact checks
+        run: make verify

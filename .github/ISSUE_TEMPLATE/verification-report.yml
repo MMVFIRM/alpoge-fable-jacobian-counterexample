@@ -1,0 +1,44 @@
+name: Independent verification report
+description: Report a reproduction of one or more frozen checks.
+title: "[Verification] "
+labels: ["verification"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for independently checking the package. Please include exact software versions and unedited output.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks reproduced
+      options:
+        - label: Check 1 — determinant
+        - label: Check 2 — collision
+        - label: Check 3 — generic degree
+        - label: Check 4 — Jelonek surface
+        - label: Check 5 — fiber stratification
+        - label: Check 6 — Galois/monodromy structure
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, SymPy version, and computer algebra system if reimplemented elsewhere.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Exact output or independent derivation
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Reproduced exactly
+        - Reproduced with non-material differences
+        - Could not reproduce
+        - Found a possible mathematical issue
+    validations:
+      required: true

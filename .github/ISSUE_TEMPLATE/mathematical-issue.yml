@@ -1,0 +1,26 @@
+name: Mathematical issue
+description: Report a precise possible error in Paper I or a frozen check.
+title: "[Mathematical issue] "
+labels: ["mathematical-review"]
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Exact claim or file
+      description: Identify the numbered claim, file, and line or formula.
+    validations:
+      required: true
+  - type: textarea
+    id: objection
+    attributes:
+      label: Precise objection
+      description: Give a finite countercalculation, failed assertion, or missing implication.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include commands, software versions, and exact output.
+    validations:
+      required: true
